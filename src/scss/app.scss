@@ -1,0 +1,29 @@
+$white: #fff;
+$lightgray: #ebebeb;
+$pink: #f69882;
+$maxWidth: 1200px;
+$fontLT: 'GTWalshLight',sans-serif;
+$fontMD: 'GTWalshMedium',sans-serif;
+$fontRG: 'GTWalshRegular',sans-serif;
+$fontBD: 'GTWalshBold',sans-serif;
+
+
+@import 'mixins';
+@import 'fonts';
+@import 'normalize';
+@import 'animations';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+
+  width: 100%;
+  height: 100%;
+  font-family: $fontRG;
+
+}
+
+@import 'components/loading';
+@import 'components/home';
