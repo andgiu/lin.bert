@@ -52,17 +52,20 @@ class Home extends Component {
 
   render() {
 
+    let route = this.props.params.id;
+
     return(
       <div id="home" ref="home">
         {this.projects.map(project => {
 
           let active = project.route == this.props.params.id;
+          let closedClass = route != undefined && project.route != this.props.params.id ? ' closed' : '';
 
           return(
-            <div id={project.route} key={project.route} className="project-holder" disabled={project.route == this.props.params.id}>
-              <div className="project-item" disabled={this.props.params.id != undefined && project.route != this.props.params.id}>
+            <div id={project.route} key={project.route} className={'project-holder' + closedClass}>
+              <div className="project-item">
                 <Link to={project.route} activeClassName="active">
-                  <div className="header-holder" disabled={active}>
+                  <div className={'header-holder' + closedClass} disabled={active}>
                     <div className="bg">
                       <img src={Config.getImageFromCache(project.image).src} />
                     </div>
