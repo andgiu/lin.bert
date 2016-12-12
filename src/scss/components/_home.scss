@@ -1,6 +1,5 @@
 #home {
 
-
   .project-holder {
     width: 100%;
     height: auto;
@@ -54,7 +53,7 @@
       width: 100%;
       height: 300px;
       margin:  0 auto;
-      @include transition();
+      @include transition(.15s);
 
       &:after {
         content: '';
@@ -73,7 +72,7 @@
 
       &[disabled] {
         max-width: 100%;
-        height: 550px;
+        height: 450px;
 
         .border {
           opacity: 0;
@@ -188,5 +187,7 @@
     }
 
   }
+
+  @import './detail';
 
 }

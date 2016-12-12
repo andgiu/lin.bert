@@ -4,10 +4,10 @@
 
   position: fixed;
   @include size();
-  @include animation(loadingBgColor,.25s);
+  //@include animation(loadingBgColor,.25s);
 
   &[disabled] {
-    background-color: $lightgray;
+    //background-color: $lightgray;
     @include animation(hide,1s,1s);
   }
 
@@ -17,10 +17,10 @@
      position: absolute;
      margin-top: -50px;
      @include center();
-     @include size(300px,300px);
+     @include size(200px,200px);
 
      @include MediaQuery($MEDIA_Tablet) {
-       @include size(400px,400px);
+       @include size(100px,100px);
      }
 
      canvas {

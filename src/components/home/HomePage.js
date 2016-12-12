@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import * as Config from '../actions/Config';
 import _ from 'lodash';
+import DetailHeader from './DetailHeader';
+import DetailContent from './DetailContent';
+import * as JSUtil from '../common/JSUtils';
 
 class Home extends Component {
 
   constructor(props){
     super(props);
+    this.onScrollHandler = this.onScrollHandler.bind(this);
   }
 
   componentWillMount() {
@@ -14,6 +18,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
+    window.addEventListener('scroll',this.onScrollHandler);
     this.animateDetail();
   }
 
@@ -21,27 +26,69 @@ class Home extends Component {
     this.animateDetail();
   }
 
-  animateDetail() {
+  componentWillUnmount() {
+    window.removeEventListener('scroll',this.onScrollHandler);
+  }
 
-    let route = this.props.params.id;
-    console.log(route);
+  onScrollHandler() {
 
     _.each(this.refs.home.children,_.bind(function(project){
 
-      /*
-      let inner = project.firstElementChild;
-      let height = project.getAttribute('id') != route ? 40 : inner.offsetHeight;
-      height = route == undefined ? inner.offsetHeight : height;
+      let inner = project.childNodes[1];
+      let images = inner.childNodes[0].childNodes[2].children;
+      let appearOffset = 200;
 
-      TweenLite.killTweensOf(project);
-      TweenLite.to(project,1,{height:height, ease:Expo.easeInOut});
-      */
+      if(JSUtil.hasClass(inner,'active')) {
 
-      if(route != undefined && route == project.getAttribute('id')) {
+        _.each(images,_.bind(function(image,i){
+
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          let offset = image.offsetTop - scrollTop;
+          let windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
 
+          if(offset + appearOffset < windowHeight && !JSUtil.hasClass(image,'active')) JSUtil.addClass(image,'active');
+          else if(offset + appearOffset >= windowHeight && JSUtil.hasClass(image,'active')) JSUtil.removeClass(image,'active');
+
+        }));
 
       } else {
+
+        return 0;
+
+      }
+
+    }));
+
+  }
+
+  animateDetail() {
+
+    let route = this.props.params.id;
+    _.each(this.refs.home.children,_.bind(function(project){
+
+      let inner = project.childNodes[1];
+      let contentH = inner.firstElementChild.offsetHeight + 30;
+
+      TweenLite.killTweensOf(inner);
+      if(route != undefined && route == project.getAttribute('id')) {
+
+        JSUtil.addClass(inner,'active');
+        TweenLite.to(inner,.65,{
+
+          height:contentH,
+          ease:Expo.easeInOut,
+          onCompleteParams:[inner],
+          onComplete: function(_inner) {
+            _inner.style.height = "auto";
+          }
+        });
+
+      } else {
+
+        JSUtil.removeClass(inner,'active');
+        inner.style.height = contentH;
+        TweenLite.to(inner,.35,{height:0,ease:Expo.easeOut});
 
       };
 
@@ -63,18 +110,8 @@ class Home extends Component {
 
           return(
             <div id={project.route} key={project.route} className={'project-holder' + closedClass}>
-              <div className="project-item">
-                <Link to={project.route} activeClassName="active">
-                  <div className={'header-holder' + closedClass} disabled={active}>
-                    <div className="bg">
-                      <img src={Config.getImageFromCache(project.image).src} />
-                    </div>
-                    <div className="border" />
-                    <h1><span>{project.name}</span></h1>
-                    <h2><span>{project.type}</span></h2>
-                  </div>
-                </Link>
-              </div>
+              <DetailHeader project={project} active={active} closedClass={closedClass}/>
+              <DetailContent content={project.content} />
             </div>
           );
 

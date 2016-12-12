@@ -3,7 +3,7 @@ import * as Loader from '../common/Loader';
 import * as Config from '../actions/Config';
 import _ from 'lodash';
 
-const CANVAS_SIZE = 800;
+const CANVAS_SIZE = 200;
 const COLOR_BLACK = "#000";
 const COLOR_WHITE = "#fff";
 const COLOR_PINK = "#f69882";
@@ -23,12 +23,18 @@ class Loading extends Component {
 
   componentDidMount() {
 
+    this.refs.canvas.imageSmoothingEnabled = true;
     this.refs.canvas.width = CANVAS_SIZE;
     this.refs.canvas.height = CANVAS_SIZE;
 
   }
 
   drawArc(ctx,color,centerX,centerY,innerRadius,outerRadius,startAngle,endAngle,anticlockwise) {
+
+    centerX = Math.floor(centerX / 4);
+    centerY = Math.floor(centerY / 4);
+    innerRadius = Math.floor(innerRadius / 4);
+    outerRadius = Math.floor(outerRadius / 4);
 
     startAngle -= 90;
     endAngle -= 90;
@@ -86,7 +92,7 @@ class Loading extends Component {
     let animationList = [
       {type: 'arc',start: 0,end: -360, sAngle: 0, radius: 400, x: 400,y: 400,delay: .55, duration: 1,color: COLOR_PINK, reverse: true},
       {type: 'eye'},
-      {type: 'arc',start: 180,end: 360, sAngle: 180, radius: 400, x: 400,y: 400,delay: 1.5, duration: .85,color: COLOR_WHITE, reverse: false},
+      {type: 'arc',start: 180,end: 360, sAngle: 180, radius: 404, x: 400,y: 400,delay: 1.5, duration: .85,color: COLOR_WHITE, reverse: false},
       {type: 'arc',start: 0,end: 360, sAngle: 0, radius: 112, x: 620,y: 385,delay: 1.6, duration: 1,color: COLOR_WHITE, reverse: false},
       {type: 'arc',start: 0,end: -180, sAngle: 0, radius: 83, x: 400,y: 667,delay: 1.15, duration: 1,color: COLOR_PINK, reverse: true},
       {type: 'arc',start: 0,end: -360, sAngle: 0, radius: 112, x: 180,y: 385,delay: 1.85, duration: 1,color: COLOR_PINK, reverse: true},
@@ -102,10 +108,10 @@ class Loading extends Component {
 
     let eye = {
 
-      radius: 81,
-      center: { x: 620, y: 385, x1: 620, y1: 385, x2: 620, y2: 385 },
-      start: {x:485,y:520},
-      end: {x:755, y:250}
+      radius: 82 / 4,
+      center: { x: 620 / 4, y: 385 / 4, x1: 620 / 4, y1: 385 / 4, x2: 620 / 4, y2: 385 / 4 },
+      start: {x:485 / 4,y:520 / 4},
+      end: {x:755 / 4, y:250 / 4}
 
     };
 
