@@ -17,11 +17,8 @@
      position: absolute;
      margin-top: -50px;
      @include center();
-     @include size(200px,200px);
+     @include size(100px,100px);
 
-     @include MediaQuery($MEDIA_Tablet) {
-       @include size(100px,100px);
-     }
 
      canvas {
        position: absolute;
@@ -33,7 +30,7 @@
        position: absolute;
        bottom: -50px;
        left: 50%;
-       margin-left: 8px;
+       margin-left: 25px;
        width: 0px;
        height: 70px;
        @include translate(-70px,100%);
@@ -43,7 +40,7 @@
          position: absolute;
          top: 50%;
          left: 10px;
-         @include size(140px,31px);
+         @include size(90px,20px);
          @include translate(0,-50%);
        }
 
@@ -53,7 +50,7 @@
          left: -10px;
          top: 50%;
          width: 0;
-         height: 70px;
+         height: 50px;
          background-color: $pink;
          z-index: -1;
          @include translate(0,-50%);

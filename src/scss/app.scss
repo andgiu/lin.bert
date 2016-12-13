@@ -1,7 +1,8 @@
+$black: #000;
 $white: #fff;
 $lightgray: #ebebeb;
 $pink: #f69882;
-$maxWidth: 1200px;
+$maxWidth: 1080px;
 $fontLT: 'GTWalshLight',sans-serif;
 $fontMD: 'GTWalshMedium',sans-serif;
 $fontRG: 'GTWalshRegular',sans-serif;
@@ -26,5 +27,7 @@ html {
 
 }
 
+@import 'header';
 @import 'components/loading';
 @import 'components/home';
+@import 'footer';

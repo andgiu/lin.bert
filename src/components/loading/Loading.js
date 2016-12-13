@@ -31,10 +31,10 @@ class Loading extends Component {
 
   drawArc(ctx,color,centerX,centerY,innerRadius,outerRadius,startAngle,endAngle,anticlockwise) {
 
-    centerX = Math.floor(centerX / 4);
-    centerY = Math.floor(centerY / 4);
-    innerRadius = Math.floor(innerRadius / 4);
-    outerRadius = Math.floor(outerRadius / 4);
+    centerX = centerX / 4;
+    centerY = centerY / 4;
+    innerRadius = innerRadius / 4;
+    outerRadius = outerRadius / 4;
 
     startAngle -= 90;
     endAngle -= 90;

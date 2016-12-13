@@ -20,10 +20,14 @@ class Home extends Component {
   componentDidMount(){
     window.addEventListener('scroll',this.onScrollHandler);
     this.animateDetail();
+    this.onScrollHandler();
+
   }
 
   componentDidUpdate(props){
     this.animateDetail();
+    this.onScrollHandler();
+    document.body.scrollTop = 0;
   }
 
   componentWillUnmount() {
@@ -74,7 +78,7 @@ class Home extends Component {
       if(route != undefined && route == project.getAttribute('id')) {
 
         JSUtil.addClass(inner,'active');
-        TweenLite.to(inner,.65,{
+        TweenLite.to(inner,.25,{
 
           height:contentH,
           ease:Expo.easeInOut,
@@ -88,7 +92,7 @@ class Home extends Component {
 
         JSUtil.removeClass(inner,'active');
         inner.style.height = contentH;
-        TweenLite.to(inner,.35,{height:0,ease:Expo.easeOut});
+        TweenLite.to(inner,.15,{height:0,ease:Expo.easeOut});
 
       };
 
@@ -103,15 +107,18 @@ class Home extends Component {
 
     return(
       <div id="home" ref="home">
-        {this.projects.map(project => {
+        {this.projects.map((project,i) => {
 
           let active = project.route == this.props.params.id;
           let closedClass = route != undefined && project.route != this.props.params.id ? ' closed' : '';
+          let next = this.projects[i + 1] ? this.projects[i + 1] : this.projects[0];
+          let prev = this.projects[i - 1] ? this.projects[i - 1] : this.projects[this.projects.length - 1];
+
 
           return(
             <div id={project.route} key={project.route} className={'project-holder' + closedClass}>
               <DetailHeader project={project} active={active} closedClass={closedClass}/>
-              <DetailContent content={project.content} />
+              <DetailContent content={project.content} prev={prev} next={next}/>
             </div>
           );
 

@@ -37,20 +37,99 @@
   h2 {
     font-family: $fontMD;
     margin-top: 10px;
+
+    @include MediaQuery($MEDIA_DesktopWide) {
+      &.no-margin {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .pagination {
+
+    margin-top: 40px;
+    line-height: 3;
+    @include font-size(16px);
+    font-family: $fontLT;
+
+    div.caption {
+
+        line-height: 0;
+        width: 100%;
+        display: block;
+        @include font-size(12px);
+    }
+
+    span {
+      position: relative;
+      display: block;
+      @include translate(0,1px);
+      @include transition();
+    }
+
+    a {
+
+      &:hover {
+
+        span {
+          @include translate(-10px,1px);
+        }
+
+      }
+    }
+
+    .column {
+
+      width: 50% !important;
+      float: left;
+
+      &.left {
+
+        padding-right: 15px;
+        text-align: right;
+
+      }
+
+      &.right {
+        padding-left: 15px;
+        text-align: left;
+
+        a {
+
+          &:hover {
+
+            span {
+              @include translate(10px,1px);
+            }
+
+          }
+        }
+
+      }
+    }
   }
 
   .link-holder {
 
     position: relative;
     margin: 20px 0;
+    width: 100%;
+    display: block;
 
     .link {
 
       position: relative;
       display: block;
+      line-height: 2;
+      @include font-size(14px);
 
-      a {
+      span {
+        margin-right: 5px;
+      }
+
+      span,a {
         display: inline-block;
+        vertical-align: middle;
       }
     }
 
@@ -72,17 +151,27 @@
 
   .images-holder {
 
+    margin-top: 40px;
+
     .column {
       margin-bottom: 30px;
       text-align: center;
       padding: 0 !important;
       opacity: 0;
       @include transition(1s);
+      @include translate(0,80px);
+
+      &:nth-child(even) {
+
+        -webkit-transition-delay: .15s;
+        transition-delay: .15s;
+
+      }
 
       &.active {
 
         opacity: 1;
-
+        @include translate();
       }
 
     }
@@ -100,6 +189,7 @@
 
   .column {
 
+    vertical-align: top;
 
     @include MediaQuery($MEDIA_DesktopBase) {
 
