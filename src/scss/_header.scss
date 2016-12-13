@@ -9,6 +9,13 @@ header {
       max-width: $maxWidth;
     }
 
+    #icon {
+      position: absolute;
+      @include center();
+      width: 50px;
+      height: auto;
+    }
+
     #logo {
 
       position: relative;

@@ -8,6 +8,7 @@ class Header extends Component {
         <div id="logo">
           <Link to="/"><img src="assets/logo.png" /></Link>
         </div>
+        <img id="icon" src="assets/icon.png" />
         <nav>
           <ul>
             <li><Link to="/">Works</Link></li>
