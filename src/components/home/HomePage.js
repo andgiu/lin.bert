@@ -69,6 +69,7 @@ class Home extends Component {
   animateDetail() {
 
     let route = this.props.params.id;
+
     _.each(this.refs.home.children,_.bind(function(project){
 
       let inner = project.childNodes[1];
@@ -113,7 +114,6 @@ class Home extends Component {
           let closedClass = route != undefined && project.route != this.props.params.id ? ' closed' : '';
           let next = this.projects[i + 1] ? this.projects[i + 1] : this.projects[0];
           let prev = this.projects[i - 1] ? this.projects[i - 1] : this.projects[this.projects.length - 1];
-
 
           return(
             <div id={project.route} key={project.route} className={'project-holder' + closedClass}>

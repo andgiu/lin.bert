@@ -161,6 +161,8 @@
       @include transition(1s);
       @include translate(0,80px);
 
+
+
       &:nth-child(even) {
 
         -webkit-transition-delay: .15s;

@@ -12,7 +12,7 @@ class DetailHeader extends Component {
 
     return(
       <div className="project-item">
-        <Link to={project.route} activeClassName="active">
+        <Link to={'project/' + project.route} activeClassName="active">
           <div className={'header-holder' + closedClass} disabled={active}>
             <div className="bg">
               <img src={Config.getImageFromCache(project.image).src} />

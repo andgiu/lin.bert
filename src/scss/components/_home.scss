@@ -6,7 +6,7 @@
     overflow: hidden;
     margin-bottom: 40px;
     opacity: 0;
-    @include translate(0,80px);
+    @include translate(0,40px);
 
     @include MediaQuery($MEDIA_Tablet) {
       margin-bottom: 80px;

@@ -48,11 +48,11 @@ class DetailContent extends Component {
           <div className="pagination">
             <div className="column left">
               <div className="caption">previous project</div>
-              <Link className="link" to={prev.route} data-letters={prev.name}><span className="icon-left-open"></span>{prev.name}</Link>
+              <Link className="link" to={'project/' + prev.route} data-letters={prev.name}><span className="icon-left-open"></span>{prev.name}</Link>
             </div>
             <div className="column right">
               <div className="caption">next project</div>
-              <Link className="link" to={next.route} data-letters={next.name}>{next.name}<span className="icon-right-open"></span></Link>
+              <Link className="link" to={'project/' + next.route} data-letters={next.name}>{next.name}<span className="icon-right-open"></span></Link>
             </div>
           </div>
         </div>
