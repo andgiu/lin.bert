@@ -1,6 +1,8 @@
 {
   "name":"lin.bert website",
   "manifest":[
+    {"id":"bert","src":"assets/about/bert.jpg"},
+    {"id":"wen","src":"assets/about/wen.jpg"},
     {"id":"about","src":"assets/header/about.jpg"},
     {"id":"kuafu","src":"assets/header/kuafu.jpg"},
     {"id":"su","src":"assets/header/su.jpg"},
@@ -108,6 +110,26 @@
       }
     }
   ],
-  "about": {},
+  "about": {
+    "title":"About lin.bert",
+    "description":"Lin.bert is a creative collective, created by visual artists Lin Yi-Wen and Bertrand Carrara. Their interdisciplinary work combines art, design, sound and code to create digital experiences, with a strong focus on storytelling and playfulness.<br/>Based in London and Geneva their work has been exhibited around Europe.",
+    "wen":{
+      "title":"Lin Yi-Wen",
+      "description":"Wen is a Creative Technologist during the  day and a digital artist at night. That’s when he is not looking after his two lovely kids. On the foreground of the digital exploration, he’s constantly experimenting and pushing boundaries.<br/><br/>Originally from Taiwan, he lives and works in London having previously lived in Paris for 5 years. Living abroad has definitely had a huge impact on Wen’s life. The cultural changes and the variety of talented people he has met and worked with continues to inspire his creative work. Wen’s eastern culture and background is one of his main sources of inspiration.",
+      "picture":"wen"
+    },
+    "bert":{
+      "title":"Bertrand Carrara",
+      "description":"Bert is an art-director and has worked in the digital field for more than a decade, mainly in London but also in New York and now in Geneva (@Buzzbrothers).<br/><br/>With a background in Art & Design he loves experimenting with every type of medium and mixing them together. He has found in the digital field a place where he can express his need to mix storytelling, illustration, motion and interaction.",
+      "picture":"bert"
+    },
+    "friends":[
+      {"name":"Alex Jenkins","url":"http://www.alex-jenkins.co.uk/"},
+      {"name":"Owen Hindley","url":"http://www.owenhindley.co.uk/"},
+      {"name":"Viggo Mörck","url":"http://www.viggomorck.com/"},
+      {"name":"Filippo Spiezia","url":"http://www.filippospiezia.com/"},
+      {"name":"Clément Chenebault","url":"https://twitter.com/mad_clem"}
+    ]
+  },
   "press": []
 }

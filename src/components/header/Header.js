@@ -11,9 +11,9 @@ class Header extends Component {
         <img id="icon" src="assets/icon.png" />
         <nav>
           <ul>
-            <li><Link to="/">Works</Link></li>
-            <li><Link to="about">About & Contacts</Link></li>
-            <li><Link to="press">Press</Link></li>
+            <li><Link className="link link--kukuri" to="/" data-letters="Works">Works</Link></li>
+            <li><Link className="link link--kukuri" to="about" data-letters="About & Contacts">About & Contacts</Link></li>
+            <li><Link className="link link--kukuri" to="press" data-letters="Press">Press</Link></li>
           </ul>
         </nav>
       </header>

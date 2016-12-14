@@ -15,6 +15,10 @@ export const getProjectList = () => {
   return data.projects;
 }
 
+export const getAbout = () => {
+  return data.about;
+}
+
 export const getManifest = () => {
   return data.manifest;
 }
