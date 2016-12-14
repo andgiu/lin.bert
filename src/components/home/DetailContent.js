@@ -9,6 +9,7 @@ class DetailContent extends Component {
     let content = this.props.content;
     let prev = this.props.prev;
     let next = this.props.next;
+    let index = -1;
 
     return(
       <div className="detail-holder">
@@ -35,11 +36,17 @@ class DetailContent extends Component {
           <div className="images-holder">
           {content.images.map((image,i) => {
 
-            let columnClass = !((i + 2) % 2) ? "left" : "right";
+
+            let imageSplit = image.split(",");
+            let imageID = imageSplit.length > 1 ? imageSplit[0] : image;
+            let isFull = imageSplit.length > 1;
+            index += imageSplit.length > 1 ? 0 : 1;
+
+            let columnClass = isFull ? "full" : !((index + 2) % 2) ? "left" : "right";
 
             return(
               <div className={'column ' + columnClass} key={i}>
-                <img src={Config.getImageFromCache(image).src} />
+                <img src={Config.getImageFromCache(imageID).src} />
               </div>
             );
 
@@ -47,12 +54,9 @@ class DetailContent extends Component {
           </div>
           <div className="pagination">
             <div className="column left">
-              <div className="caption">previous project</div>
-              <Link className="link" to={'project/' + prev.route} data-letters={prev.name}><span className="icon-left-open"></span>{prev.name}</Link>
-            </div>
+              <Link className="link" to={'project/' + prev.route}><span className="icon-left-open">Previous Project</span></Link></div>
             <div className="column right">
-              <div className="caption">next project</div>
-              <Link className="link" to={'project/' + next.route} data-letters={next.name}>{next.name}<span className="icon-right-open"></span></Link>
+              <Link className="link" to={'project/' + next.route}><span className="icon-right-open-after">Next Project</span></Link>
             </div>
           </div>
         </div>

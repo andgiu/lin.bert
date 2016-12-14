@@ -12,9 +12,10 @@ import Press from './components/press/Press';
 export default (
   <Route component={App}>
 
-    <Route path="/" component={HomePage} />
-    <Route path="project/:id" component={HomePage} />
     <Route path="about" component={About} />
+
+    <Route path="*" component={HomePage} />
+
 
   </Route>
 );

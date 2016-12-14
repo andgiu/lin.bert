@@ -51,7 +51,7 @@
             "href":"https://vimeo.com/191776687"
           }
         ],
-        "images":["kuafu-01","kuafu-02","kuafu-03","kuafu-04","kuafu-05","kuafu-06"]
+        "images":["kuafu-01,full","kuafu-02","kuafu-03","kuafu-04","kuafu-05","kuafu-06,full"]
       }
     },
     {

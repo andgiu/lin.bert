@@ -34,6 +34,7 @@ class Home extends Component {
     window.removeEventListener('scroll',this.onScrollHandler);
   }
 
+
   onScrollHandler() {
 
     _.each(this.refs.home.children,_.bind(function(project){
@@ -68,7 +69,8 @@ class Home extends Component {
 
   animateDetail() {
 
-    let route = this.props.params.id;
+    let route = this.props.params.splat.split("/")[1];
+
 
     _.each(this.refs.home.children,_.bind(function(project){
 
@@ -104,14 +106,14 @@ class Home extends Component {
 
   render() {
 
-    let route = this.props.params.id;
+    let route = this.props.params.splat.split("/")[1];
 
     return(
       <div id="home" ref="home">
         {this.projects.map((project,i) => {
 
-          let active = project.route == this.props.params.id;
-          let closedClass = route != undefined && project.route != this.props.params.id ? ' closed' : '';
+          let active = project.route == route;
+          let closedClass = route != undefined && project.route != route ? ' closed' : '';
           let next = this.projects[i + 1] ? this.projects[i + 1] : this.projects[0];
           let prev = this.projects[i - 1] ? this.projects[i - 1] : this.projects[this.projects.length - 1];
 
