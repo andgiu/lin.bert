@@ -1,6 +1,7 @@
 #about {
 
   margin-bottom: 40px;
+  @include animation(appear);
 
   img {
 
@@ -52,6 +53,8 @@
   }
 
   .contact {
+
+    margin: 20px 0;
     text-align: center;
     @include font-size(20px);
 

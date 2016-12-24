@@ -25,10 +25,18 @@ html {
   height: 100%;
   font-family: $fontRG;
 
+  #app {
+    padding: 0 20px;
+    @include MediaQuery($MEDIA_DesktopBase) {
+      padding: 0;
+    }
+  }
+
 }
 
 @import 'header';
 @import 'components/loading';
 @import 'components/home';
 @import 'components/about';
+@import 'components/press';
 @import 'footer';

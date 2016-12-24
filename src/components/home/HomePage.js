@@ -117,6 +117,8 @@ class Home extends Component {
           let next = this.projects[i + 1] ? this.projects[i + 1] : this.projects[0];
           let prev = this.projects[i - 1] ? this.projects[i - 1] : this.projects[this.projects.length - 1];
 
+          closedClass = route == project.route ? ' open' : closedClass;
+
           return(
             <div id={project.route} key={project.route} className={'project-holder' + closedClass}>
               <DetailHeader project={project} active={active} closedClass={closedClass}/>

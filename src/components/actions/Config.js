@@ -19,6 +19,10 @@ export const getAbout = () => {
   return data.about;
 }
 
+export const getPress = () => {
+  return data.press;
+}
+
 export const getManifest = () => {
   return data.manifest;
 }

@@ -50,6 +50,7 @@
     "open": "0.0.5",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
+    "stats-webpack-plugin": "^0.4.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",

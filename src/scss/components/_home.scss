@@ -4,11 +4,13 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     opacity: 0;
     @include translate(0,40px);
 
-    @include MediaQuery($MEDIA_Tablet) {
+
+
+    @include MediaQuery($MEDIA_DesktopBase) {
       margin-bottom: 80px;
     }
 
@@ -31,6 +33,7 @@
         }
       }
     }
+
   }
 
   .project-item {
@@ -51,9 +54,11 @@
       cursor: pointer;
       position: relative;
       width: 100%;
-      height: 300px;
+      height: 120px;
       margin:  0 auto;
       @include transition(.15s);
+
+
 
       &:after {
         content: '';
@@ -64,6 +69,11 @@
         @include translate(0,-50%);
         @include transition();
         background-color: $pink;
+        height: calc(100% - 20px);
+
+        @include MediaQuery($MEDIA_DesktopBase) {
+          @include size(8px,30%);
+        }
 
       }
 
@@ -74,7 +84,20 @@
       &[disabled] {
 
         max-width: 100%;
-        height: 450px;
+        width: 100%;
+        height: 120px;
+
+        img {
+
+          height: auto;
+          width: 100%;
+          max-width: inherit !important;
+          max-height: inherit !important;
+        }
+
+        @include MediaQuery($MEDIA_DesktopBase) {
+          height: 450px;
+        }
 
         .border {
           border-width: 0 !important;
@@ -89,8 +112,11 @@
         }
 
         img {
-          -webkit-filter: saturate(1);
-          filter: saturate(1);
+
+          @include MediaQuery($MEDIA_DesktopBase) {
+            -webkit-filter: saturate(1);
+            filter: saturate(1);
+          }
         }
       }
 
@@ -98,13 +124,20 @@
         max-width: $maxWidth;
       }
 
+      @include MediaQuery($MEDIA_DesktopBase) {
+        height: 300px;
+      }
 
       .border {
         position: absolute;
         @include pos();
         @include size();
         @include transition();
-        border: 0 solid $white;
+        border: 10px solid $white;
+
+        @include MediaQuery($MEDIA_DesktopBase) {
+          border-width: 0;
+        }
       }
 
       h1 {
@@ -116,13 +149,16 @@
         white-space: nowrap;
         text-align: center;
         font-family: $fontBD;
-        @include pos(0,50%);
-        @include font-size(48px);
+        @include pos(8px,50%);
+        @include font-size(20px);
         @include rotate(-90deg);
         @include transition();
         -webkit-transition-property: opacity;
         transition-property: opacity;
 
+        @include MediaQuery($MEDIA_DesktopBase) {
+          @include font-size(48px);
+        }
 
         span {
           position: absolute;
@@ -160,17 +196,27 @@
       img {
 
         position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        @include pos(50%,50%);
-        @include translate(-50%,-50%);
+        //max-width: 400px;
+        //max-height: 280px;
+        width: 100%;
+        height: auto;
 
-        -webkit-filter: saturate(0);
-        filter: saturate(0);
         @include transition();
+
+
+        @include MediaQuery($MEDIA_DesktopBase) {
+          min-width: 100%;
+          min-height: 100%;
+          @include pos(50%,50%);
+          @include translate(-50%,-50%);
+          -webkit-filter: saturate(0);
+          filter: saturate(0);
+        }
+
+
       }
 
-      @include MediaQuery($MEDIA_Tablet) {
+      @include MediaQuery($MEDIA_DesktopBase) {
         &:hover {
 
           &:after {

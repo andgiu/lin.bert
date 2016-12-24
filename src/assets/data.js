@@ -8,6 +8,7 @@
     {"id":"su","src":"assets/header/su.jpg"},
     {"id":"dark-forest","src":"assets/header/dark-forest.jpg"},
     {"id":"xmas-xperiment-2016","src":"assets/header/xmas-2016.jpg"},
+    {"id":"xmas-xperiment-2014","src":"assets/header/xmas-2014.jpg"},
     {"id":"kuafu-01","src":"assets/kuafu/kuafu-01.jpg"},
     {"id":"kuafu-02","src":"assets/kuafu/kuafu-02.jpg"},
     {"id":"kuafu-03","src":"assets/kuafu/kuafu-03.jpg"},
@@ -35,7 +36,10 @@
     {"id":"xmas-2016-01","src":"assets/xmas-2016/xmas-2016-01.jpg"},
     {"id":"xmas-2016-02","src":"assets/xmas-2016/xmas-2016-02.jpg"},
     {"id":"xmas-2016-03","src":"assets/xmas-2016/xmas-2016-03.jpg"},
-    {"id":"xmas-2016-04","src":"assets/xmas-2016/xmas-2016-04.jpg"}
+    {"id":"xmas-2016-04","src":"assets/xmas-2016/xmas-2016-04.jpg"},
+    {"id":"xmas-2014-01","src":"assets/xmas-2014/xmas-2014-01.jpg"},
+    {"id":"xmas-2014-02","src":"assets/xmas-2014/xmas-2014-02.jpg"},
+    {"id":"xmas-2014-03","src":"assets/xmas-2014/xmas-2014-03.jpg"}
   ],
   "projects":[
     {
@@ -108,6 +112,28 @@
         ],
         "images":["xmas-2016-01","xmas-2016-02","xmas-2016-03","xmas-2016-04"]
       }
+    },
+    {
+      "name":"xmas 2014",
+      "route":"xmas-2014",
+      "type":"chrome experiment",
+      "image":"xmas-xperiment-2014",
+      "content": {
+        "title":"xmas xperiment 2014",
+        "contentL":"In 2014 we participated in the Xmas Xperiment in which users blew on gold dust to reveal illustrations.",
+        "contentR":"",
+        "link":[
+          {
+            "label":"Experience it",
+            "href":"http://www.bongiovi.tw/projects/christmas2014/"
+          },
+          {
+            "label":"View the blog",
+            "href":"http://blog.bongiovi.tw/blow-my-christmas-experiment-this-year/"
+          }
+        ],
+        "images":["xmas-2014-01,full","xmas-2014-02,full","xmas-2014-03,full"]
+      }
     }
   ],
   "about": {
@@ -131,5 +157,42 @@
       {"name":"Clément Chenebault","url":"https://twitter.com/mad_clem"}
     ]
   },
-  "press": []
+  "press": [
+    {
+      "label":"<b>Kuafu</b> Digital art Installation — <b>Awwwards</b> Conference in London",
+      "sub":"February 2017"
+    },
+    {
+      "label":"<b>SÙ</b> Interactive installation — <b>DDD2016</b> Milan Design Conference",
+      "sub":"October 2016"
+    },
+    {
+      "label":"<b>SÙ</b> Interactive installation — <b>International School of Geneva</b>",
+      "sub":"April 2016"
+    },
+    {
+      "label":"<b>SÙ</b> Interactive installation named Star Canvas — <b>B-Reel</b> 5th anniversary party",
+      "sub":"April 2014"
+    },
+    {
+      "label":"<b>Dark Forest</b> Web Experiment — <b>Chrome Experiment</b>",
+      "sub":"April 2014"
+    },
+    {
+      "label":"<b>Kuafu</b> Digital art Installation  — Finalist at <b>Google Devart</b>",
+      "sub":"2013"
+    },
+    {
+      "label":"<span class=\"icon-link\"></span><a class=\"link link--kukuri\" href=\"https://www.chromeexperiments.com/experiment/particles-valley\" target=\"_blank\" data-letters=\"Particles Valley\"><b>Particles Valley</b></a>",
+      "sub":"Chrome Experiments"
+    },
+    {
+      "label":"<span class=\"icon-link\"></span><a class=\"link link--kukuri\" href=\"https://www.chromeexperiments.com/experiment/the-dark-forest\" target=\"_blank\" data-letters=\"Dark Forest\"><b>Dark Forest</b></a>",
+      "sub":"Chrome Experiments"
+    },
+    {
+      "label":"<span class=\"icon-link\"></span><a class=\"link link--kukuri\" href=\"https://www.chromeexperiments.com/experiment/blossom\" target=\"_blank\" data-letters=\"Blossom\"><b>Blossom</b></a>",
+      "sub":"Chrome Experiments"
+    }
+  ]
 }
